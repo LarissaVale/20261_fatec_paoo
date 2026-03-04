@@ -172,20 +172,76 @@
 //olaJoao()
 //tchauJoao()
 
-function eAgora(){ //função interna que acessa uma variável do corpo externo = closure
-    let cont = 1
-    function f1(){
-        console.log(cont)
-    }
-    cont++
-    function f2(){
-        console.log(cont)
-    }
-    count++
-    return {f1, f2}
+//function eAgora(){ //função interna que acessa uma variável do corpo externo = closure
+//    let cont = 1
+//    function f1(){
+//        console.log(cont)
+//    }
+//    cont++
+//    function f2(){
+//        console.log(cont)
+//    }
+//    count++
+//    return {f1, f2}
+//}
+
+//let res = eAgora()
+//res.f1()
+//res.f2
+
+//OBJETOS JAVASCRIPT
+//uma pessoa cujo nome é joão e tem 17 anos
+
+let pessoa = {
+    nome: 'João',
+    idade: 17
 }
 
-let res = eAgora()
-res.f1()
-res.f2
+let pessoa2 = {
+    nome: 'Maria',
+    idade: 21,
+    endereco: {
+        logradouro: 'Rua B',
+        numero: 20,
+        bairro: 'Vila J'
+    }
+}
 
+//console.log(`${pessoa.nome} mora na ${pessoa.endereco.logradouro}`)
+//console.log(`${pessoa['nome']} tem ${pessoa[`idade`]} anos. Ela mora na ${pessoa.endereco['logradouro']}, 
+//numero ${pessoa['endereco'].numero}.`)
+
+//objetos Javascript
+let calculadora = {
+    somar: (a,b) => a + b,
+    subtrair: function(a,b){return a - b}
+}
+
+let res1 = calcularoda.somar(1, 2)
+console.log(res1)
+console.log(calculadora.subtrair(2, 1))
+console.log(calculadora['subtrair'](2, 1))
+
+/* //uma concessionario tem cnpj e um endereço. Ela possui alguns carros em estoque. cada carro tem marca, modelo e ano de fabricação
+
+let concessionaria = {
+    CNPJ: '18.715.383/0001-40',
+    endereco: {
+        logradouro: 'Avenida Afonso Pena',
+        numero: 1212,
+        bairro: 'Centro, BH'
+    },
+    carros: [
+        {marca: "Fiat",  modelo: "Siena",  ano: 2008, proprietarios: [
+            {
+                nome: 'João', telefone: 65656565
+            },
+            {
+                nome: 'Rodrigo', telefone: 5555555
+            }
+        ]},
+        {marca: "Ford",  modelo: "Fusion",  ano: 2015, proprietarios: 0},
+        {marca: "Chevrolet",  modelo: "Onix",  ano: 2025, proprietarios: 0},
+        {marca: "Volkswagen",  modelo: "Golf GT",  ano: 2018, proprietarios: 0}
+    ]
+} */
