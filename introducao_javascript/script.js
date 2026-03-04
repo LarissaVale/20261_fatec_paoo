@@ -105,3 +105,87 @@
 
 //const numeroPar = (numero) => numero % 2 === 0
 //numeroPar(4)
+
+//const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Alex', 'Cristina']
+//const apenasComA = nomes.filter((n) => {return n.startsWith('A')})
+//console.log(apenasComA)
+//const apenasComA = nomes.filter(n => n.startsWith('A')) //syntax sugar
+//console.log(apenasComA)
+
+//const res = nomes.map(nome => nome.charAt(0)) //devolve vetor de nomes apenas com a 1 letra
+//console.log(res) 
+
+//const todosComecamComA = nomes.every(n => n.startsWith('A')) //pergunta se todos comecam com A
+//const algumComecaComA = nomes.some(n => n.startsWith('A')) //pergunta se algum comeca com A
+
+//const valores = [1, 2, 3, 4]
+//const soma = valores.reduce((ac, v) => ac + v)
+//console.log(soma)
+
+//closure
+//let umaFuncao = function(){
+//   console.log('Fui armazenada numa variavel')
+//}
+
+//umaFuncao()
+
+//function f (funcao){
+//    funcao()
+//}
+
+//f(umaFuncao)
+
+//function g(){
+//    function outraFuncao(){
+//        console.log('Fui criada pela g')
+//        return () => console.log('E agora?')
+//    }
+//    return outraFuncao
+//}
+
+//f(g())
+//f(g() () ())
+
+//const gResult = g()
+//gResult()
+//g()()
+
+//function f(){
+//    let nome = 'João'
+//    function g(){
+//        console.log(nome)
+//    }
+//    g()
+//}
+
+//f()
+
+//function saudacoesFactory(saudacao, nome){
+//    return function(){
+//        console.log(`${saudacao}, ${nome}`)
+//    }
+//}
+
+//let olaJoao = saudacoesFactory('Oi', 'João')
+//let tchauJoao = saudacoesFactory('tchau', 'João')
+
+//olaJoao()
+//tchauJoao()
+
+function eAgora(){ //função interna que acessa uma variável do corpo externo = closure
+    let cont = 1
+    function f1(){
+        console.log(cont)
+    }
+    cont++
+    function f2(){
+        console.log(cont)
+    }
+    count++
+    return {f1, f2}
+}
+
+let res = eAgora()
+res.f1()
+res.f2
+
