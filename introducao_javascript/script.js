@@ -62,3 +62,46 @@
 //console.log(a === b)
 //console.log(false == []) true
 //console.log([] == []) false                  
+
+//v1 = []
+//console.log(v1.length)
+//v1[0] = 3.4
+//console.log(v1.length)
+//v1[10] = 'abc'
+//console.log(v1)
+//for(let i=0; i<v1.length; i++){
+//    console.log(v1[i])
+//}
+
+//funções
+//functions e arrow functions
+//function hello(){
+//    console.log("oii")
+//}
+
+//hello()
+
+//function hello(nome){
+//    console.log('oii, ' + nome)
+//}
+
+//hello('Ana')
+
+//function somar(a, b){
+//    return a + b
+//}
+//console.log(somar(2,3))
+
+//const dobrar = function (n){
+//    return 2 * n
+//}
+
+//const hello = nome => console.log('Oi, ' + nome) //apenas uma instrução no corpo pode omitir as chaves
+//hello('ana');
+
+//const dobrar = n = 2 * n //não coloca chaves = não coloca return
+
+//escreva uma função que decida se um valor é par ou não
+
+//const numeroPar = (numero) => numero % 2 === 0
+//numeroPar(4)
