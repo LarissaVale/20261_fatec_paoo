@@ -1,0 +1,51 @@
+// async function hello(nome){
+//     return `Oi, ${nome}`
+// }
+
+// const umaPromise = hello('Ana')
+// umaPromise.then((texto => console.log(`${texto}`)))
+
+5 * 4 * 3 * 2 * 1
+const fatorial = n => {
+    if(n < 0)
+        return Promise.reject('Valor não pode ser negativo')
+    let res = 1
+    for(let i = 2; i <= n; i++){
+        res = res * i
+    }
+    return Promise.resolve(res)
+}
+
+//uma função p chamar com then/catch
+function chamadaComThenCatch(){
+    fatorial(5)
+    .then((res) => console.log(`Resultado: ${res}`))
+    .catch((erro) => console.log(`Erro: ${erro}`))
+
+    fatorial(-5)
+    .then((res) => console.log(`Resultado: ${res}`))
+    .catch((erro) => console.log(`Erro: ${erro}`))
+}
+
+//uma função p chamar com async/await
+const chamdadaComAsyncAwait = async () => {
+    // const f1 = await fatorial(5)
+    // console.log(f1)
+    try{
+        const f2 = await fatorial(-5)
+        console.log(f2)
+
+    }
+    catch(erro){
+        console.log(`Erro: ${erro}`)
+    }  
+    try{
+        const f1 = await fatorial(5)
+        console.log(f1)
+    }
+    catch(erro) {
+        console.log(`Erro: ${erro}`)
+    }
+}
+
+chamdadaComAsyncAwait()
