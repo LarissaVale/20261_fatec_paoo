@@ -1,21 +1,18 @@
-const axios = require("axios")
-const express = require("express")
+const express = require('express')
+const axios = require('axios')
 const app = express()
-app.use(express.json()) 
+app.use(express.json())
 
-//usando o express, definir um endpoint POST /eventos
-//nele, extrair o corpo da requisição
-//e, usando a axios, enviar o corpo para os dois microsservicos, ou seja, nas portas 4000 e 5000
 app.post('/eventos', (req, res) => {
-    const evento = req.body
+  const evento = req.body
 
-    axios.post('http://localhost:4000/lembretes', evento)
-    axios.post('http://localhost:5000/lembretes/observacoes', evento)
+  console.log(evento)
+  axios.post('http://localhost:4000/eventos', evento)
+  axios.post('http://localhost:5000/eventos', evento)
+  axios.post('http://localhost:6000/eventos', evento) 
 
-    res.status(200).end()
+  res.status(200).end()
 })
 
 const port = 10000
-app.listen(port, () => {
-    console.log(`Barramento. Porta ${port}.`)
-})
+app.listen(port, () => {console.log(`Barramento. Porta ${port}.`)})

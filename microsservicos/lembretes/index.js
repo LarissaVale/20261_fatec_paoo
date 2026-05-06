@@ -12,10 +12,10 @@ let id = 0
 app.post('/lembretes', async (req, res) => {
     id++
     const texto = req.body.texto
-    lembretes[id] = {id, texto}
+    lembretes[id] = { id, texto }
     await axios.post('http://localhost:10000/eventos', {
         tipo: 'LembreteCriado',
-        dados: {id, texto}
+        dados: { id, texto }
     })
     res.json(lembretes[id])
 })
@@ -29,7 +29,7 @@ app.get('/lembretes', (req, res) => {
 app.post('/lembretes', (req, res) => {
     id++
     const texto = req.body.texto
-    lembretes[id] = {id, texto,}
+    lembretes[id] = { id, texto, }
     res.json(lembretes[id])
 })
 
